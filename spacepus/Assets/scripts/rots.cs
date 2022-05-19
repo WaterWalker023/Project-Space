@@ -15,7 +15,8 @@ public class rots : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+        float update = Random.Range(3f, -3f);
+        transform.position += new Vector3(-speed, update, 0) * Time.deltaTime;
         if (transform.position.x < -15)
         {
 

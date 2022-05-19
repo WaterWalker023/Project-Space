@@ -11,8 +11,8 @@ public class walking : MonoBehaviour
     public GameObject bullet;
     public GameObject SAnicBoom;
 
-    int maxen = 100;
-    float enpersec = 1f;
+    int maxen = 200;
+    float enpersec = 0.5f;
     float encound = 0;
     public float moveSpeed = 5f;
     int wallleft = 9;
@@ -53,10 +53,11 @@ public class walking : MonoBehaviour
             transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (Input.GetKeyDown(KeyCode.Space) && en >= 1)
         {
             Instantiate(bullet);
+            en = en - 1;
         }
 
         if (en != maxen)
