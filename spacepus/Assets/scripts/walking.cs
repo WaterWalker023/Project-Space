@@ -11,6 +11,8 @@ public class walking : MonoBehaviour
     public GameObject bullet;
     public GameObject SAnicBoom;
 
+    float speedtime = 0;
+    int speed = 0;
     int maxen = 100;
     float enpersec = 1f;
     float encound = 0;
@@ -71,10 +73,10 @@ public class walking : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.E) && en >= 20)
+        if (Input.GetKeyDown(KeyCode.E) && en >= 15)
         {
             Instantiate(SAnicBoom);
-            en = en - 20;
+            en = en - 15;
         }
 
 
@@ -83,8 +85,18 @@ public class walking : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(speed == 1)
+        {
+            speedtime = speedtime + Time.deltaTime;
+            if (speedtime > 15)
+            {
+                speedtime = 0;
+                moveSpeed = moveSpeed / 2;
+                speed--;
+            }
+        }
 
-        
+        //test code
         if (Input.GetKey(KeyCode.O))
         {
             Instantiate(rots);
@@ -100,11 +112,23 @@ public class walking : MonoBehaviour
         }
         if (collision.collider.name == "speedup(Clone)")
         {
-            moveSpeed = moveSpeed + moveSpeed;
+            speedtime = 0;
+            if (speed == 0)
+            {
+                moveSpeed = moveSpeed + moveSpeed;
+                speed++;
+                
+            }
+            
+
         }
         if (collision.collider.name == "EnergyBoost(Clone)")
         {
             en = en + 30;
+        }
+        if (collision.collider.name == "Health(Clone)")
+        {
+            hp = hp + 1;
         }
     }
 }
