@@ -11,8 +11,8 @@ public class walking : MonoBehaviour
     public GameObject bullet;
     public GameObject SAnicBoom;
 
-    int maxen = 200;
-    float enpersec = 0.5f;
+    int maxen = 100;
+    float enpersec = 1f;
     float encound = 0;
     public float moveSpeed = 5f;
     int wallleft = 9;
@@ -53,14 +53,14 @@ public class walking : MonoBehaviour
             transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
         }
 
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && en >= 1)
         {
             Instantiate(bullet);
             en = en - 1;
         }
 
-        if (en != maxen)
+        if (en !< maxen)
         {
             encound += Time.deltaTime;
             if (encound > enpersec)
@@ -98,10 +98,13 @@ public class walking : MonoBehaviour
         {
             hp = hp - 1;
         }
-        if (collision.collider.name == "speedup")
+        if (collision.collider.name == "speedup(Clone)")
         {
             moveSpeed = moveSpeed + moveSpeed;
         }
-
+        if (collision.collider.name == "EnergyBoost(Clone)")
+        {
+            en = en + 30;
+        }
     }
 }
