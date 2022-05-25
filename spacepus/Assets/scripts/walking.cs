@@ -54,9 +54,10 @@ public class walking : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && en >= 1)
         {
             Instantiate(bullet);
+            en = en - 1;
         }
 
         if (en != maxen)
