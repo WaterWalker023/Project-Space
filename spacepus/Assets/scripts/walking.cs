@@ -21,6 +21,7 @@ public class walking : MonoBehaviour
     int wallright = -9;
     int wallup = 5;
     int walldown = -5;
+    bool slowdown = false;
 
     
     
@@ -62,7 +63,7 @@ public class walking : MonoBehaviour
             en = en - 1;
         }
 
-        if (en !< maxen)
+        if (en !< maxen && slowdown == false)
         {
             encound += Time.deltaTime;
             if (encound > enpersec)
@@ -93,6 +94,23 @@ public class walking : MonoBehaviour
                 speedtime = 0;
                 moveSpeed = moveSpeed / 2;
                 speed--;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            //Time.timeScale = 0.2f;
+            if (slowdown == false && en >= 10)
+            {
+                en = en - 10;
+                Time.timeScale = 0.2f;
+                slowdown = true;
+
+            }
+            else if (slowdown == true)
+            {
+                Time.timeScale = 1;
+                slowdown = false;
             }
         }
 
