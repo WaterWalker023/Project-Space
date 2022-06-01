@@ -111,9 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0787ad45180e81e45a12c82efa537dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 9166031149637984233, guid: eec2c51adbcd4c04cb088b05acaa6b28, type: 3}
-  energy: {fileID: 9166031149637984233, guid: 7b2d0af31005bc847b0d9988bb916435, type: 3}
-  powerup: {fileID: 9166031149637984233, guid: 4ee5dc3c00b37bd45a8b0da3294508c3, type: 3}
+  Health: {fileID: 1381447673533744488, guid: 761028df8dabf5d4db391a31aa1a3c0d, type: 3}
+  energy: {fileID: 9009147781010648361, guid: c9a24b34489f1e940ba18950727c3a96, type: 3}
+  powerup: {fileID: 5001923789841752560, guid: 6cdaa55f618005a4daf632851e48c568, type: 3}
+  ink: {fileID: 238709853140946481, guid: 1e1852122d1f8944c9cb6c2204e02a0b, type: 3}
+  speed: 2
+  time: 0
+  type: 1
 --- !u!54 &8814067825612855935
 Rigidbody:
   m_ObjectHideFlags: 0
