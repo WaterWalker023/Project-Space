@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class walking : MonoBehaviour
 {
@@ -83,7 +84,8 @@ public class walking : MonoBehaviour
 
         if (hp == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);            
+            SceneManager.LoadScene("Death");
         }
 
         if(speed == 1)
