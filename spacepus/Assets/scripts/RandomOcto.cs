@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class RandomOcto : MonoBehaviour
 {
-    float delayinMs = 1f;
-    float ms = 0;
     public GameObject rots;
-    private float timer = 0.0f;
+    private float timer;
     public float delay = 0.3f;
     // Start is called before the first frame update
     void Start()
