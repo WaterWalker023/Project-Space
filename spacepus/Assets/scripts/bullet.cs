@@ -11,7 +11,7 @@ public class bullet : MonoBehaviour
     {
         player = GameObject.Find("player");
         transform.position = player.transform.position;
-        Destroy(gameObject, 1.01f);
+        Destroy(gameObject, 2.01f);
     }
 
     // Update is called once per frame
