@@ -400,10 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rots: {fileID: 8814067825612855921, guid: d7df6f49f40e7f14c989e2a81f5021dc, type: 3}
-  snelrots: {fileID: 8814067825612855921, guid: 2dfa27d6464e563459ce0e6e5c78bbed, type: 3}
-  schietrots: {fileID: 8814067825612855921, guid: 4eb932098ac800e4cb666796d51bc7f4, type: 3}
-  boss: {fileID: 5508471802217357888, guid: 2ee8d88a9c7d2094e94c0e6b95f60f09, type: 3}
-  gametime: 0
+  delay: 1
 --- !u!65 &741883128
 BoxCollider:
   m_ObjectHideFlags: 0

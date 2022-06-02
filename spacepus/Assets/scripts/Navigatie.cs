@@ -25,9 +25,5 @@ public class Navigatie : MonoBehaviour
     {
         Application.Quit(); 
     }
-    public void options()
-    {
-        Debug.Log("press options");
-    }
     
 }

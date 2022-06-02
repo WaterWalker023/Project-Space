@@ -126,7 +126,7 @@ public class walking : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "rots(Clone)" || collision.collider.name == "snelrots(Clone)" || collision.collider.name == "schietrots(Clone)" || collision.collider.name == "ink(Clone)")
+        if (collision.collider.name == "rots(Clone)")
         {
             hp = hp - 1;
         }

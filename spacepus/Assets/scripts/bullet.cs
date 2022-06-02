@@ -11,7 +11,7 @@ public class bullet : MonoBehaviour
     {
         player = GameObject.Find("player");
         transform.position = player.transform.position;
-        Destroy(gameObject, 2.01f);
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "rots(Clone)" || collision.collider.name == "snelrots(Clone)" || collision.collider.name == "schietrots(Clone)")
+        if (collision.collider.name == "rots(Clone)")
         {
             Destroy(gameObject,0.5f);
         }
