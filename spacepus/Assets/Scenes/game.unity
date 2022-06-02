@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 420833956}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,9 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c0154e535fdce4c9ecb0df8221a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: 0
+  en: 10000
   hp: 4
-  rots: {fileID: 8814067825612855921, guid: d7df6f49f40e7f14c989e2a81f5021dc, type: 3}
   bullet: {fileID: 7551851414242400139, guid: 8696ebfc0ff972a46a48cbd20dc22845, type: 3}
   SAnicBoom: {fileID: 2866945532946895751, guid: 44556314dc28c08499012d90dfc49a09, type: 3}
   moveSpeed: 5
@@ -400,7 +399,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rots: {fileID: 8814067825612855921, guid: d7df6f49f40e7f14c989e2a81f5021dc, type: 3}
-  delay: 1
+  snelrots: {fileID: 8814067825612855921, guid: 2dfa27d6464e563459ce0e6e5c78bbed, type: 3}
+  schietrots: {fileID: 8814067825612855921, guid: 4eb932098ac800e4cb666796d51bc7f4, type: 3}
+  boss: {fileID: 5508471802217357888, guid: 2ee8d88a9c7d2094e94c0e6b95f60f09, type: 3}
+  gametime: 90
+  noboss: 0
 --- !u!65 &741883128
 BoxCollider:
   m_ObjectHideFlags: 0

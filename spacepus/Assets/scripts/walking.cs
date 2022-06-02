@@ -8,7 +8,6 @@ public class walking : MonoBehaviour
 
     public float en = 0;
     public int hp = 0;
-    public GameObject rots;
     public GameObject bullet;
     public GameObject SAnicBoom;
 
@@ -116,17 +115,12 @@ public class walking : MonoBehaviour
             }
         }
 
-        //test code
-        if (Input.GetKey(KeyCode.O))
-        {
-            Instantiate(rots);
-        }
 
 
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "rots(Clone)")
+        if (collision.collider.name == "rots(Clone)" || collision.collider.name == "snelrots(Clone)" || collision.collider.name == "schietrots(Clone)" || collision.collider.name == "ink(Clone)" || collision.collider.name == "bossink(Clone)")
         {
             hp = hp - 1;
         }
