@@ -11,7 +11,7 @@ public class walking : MonoBehaviour
     public GameObject bullet;
     public GameObject SAnicBoom;
 
-    float speedtime = 0;
+    public float speedtime = 0;
     int speed = 0;
     int maxen = 100;
     float enpersec = 1f;

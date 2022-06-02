@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class hpbar : MonoBehaviour
 {
-    GameObject Image;
     private walking _walking;
 
     public Sprite hp1;
