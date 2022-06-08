@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5508471802217357891}
   - component: {fileID: 5508471802217357890}
   - component: {fileID: 5508471802217357889}
-  - component: {fileID: 5508471802217357893}
+  - component: {fileID: 851985630963487946}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1cae180225fad6647a50cc65dc3139f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5508471802217357893
+--- !u!114 &851985630963487946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5508471802217357888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0e68be7c811c0438290cb7b4b786a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1342cfb8d402d3b49bdef88969f8401f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossink: {fileID: 238709853140946481, guid: d6f2d8d7b69052d40b52d60f259d551c, type: 3}
   hp: 5

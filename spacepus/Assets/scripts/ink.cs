@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ink : MonoBehaviour
 {
+    
     float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 0.8f);
+        Destroy(gameObject,5f);
     }
 
     // Update is called once per frame
@@ -18,9 +19,9 @@ public class ink : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "player")
+        if (collision.collider.name == "player" || collision.collider.name == "SAnicBoom(Clone)")
         {
             Destroy(gameObject);
-        }
+        }    
     }
 }

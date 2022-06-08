@@ -21,5 +21,12 @@ public class SAnicBoom : MonoBehaviour
         transform.localScale = new Vector3(Grote, Grote, Grote);
         Grote += Grote * Time.deltaTime;
     }
-    
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name == "boss(Clone)" || collision.collider.name == "boss")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
