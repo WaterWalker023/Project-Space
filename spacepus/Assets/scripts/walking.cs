@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class walking : MonoBehaviour
 {
-
+    public bool shield;
     public int en = 0;
     public int hp = 0;
     public GameObject bullet;
@@ -122,7 +122,15 @@ public class walking : MonoBehaviour
     {
         if (collision.collider.name == "rots(Clone)" || collision.collider.name == "snelrots(Clone)" || collision.collider.name == "schietrots(Clone)" || collision.collider.name == "ink(Clone)" || collision.collider.name == "bossink(Clone)")
         {
-            hp = hp - 1;
+            if (!shield)
+            {
+                hp = hp - 1;
+            }
+            else
+            {
+                shield = false;
+            }
+            
         }
         if (collision.collider.name == "speedup(Clone)")
         {
@@ -147,6 +155,10 @@ public class walking : MonoBehaviour
                 hp = hp + 1;
             }
             
+        }
+        if (collision.collider.name == "shield(Clone)")
+        {
+            shield = true;
         }
     }
 }

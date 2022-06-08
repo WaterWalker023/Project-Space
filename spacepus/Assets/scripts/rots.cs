@@ -7,7 +7,7 @@ public class rots : MonoBehaviour
     public GameObject Health;
     public GameObject energy;
     public GameObject powerup;
-    public GameObject bosspowerup;
+    public GameObject shield;
     public GameObject ink;
     public float speed = 2f;
     private walking _walking;
@@ -59,7 +59,7 @@ public class rots : MonoBehaviour
     {
         if (collision.collider.name == "bullet(Clone)" || collision.collider.name == "SAnicBoom(Clone)")
         {
-            int chance = Random.Range(1, 5);
+            int chance = Random.Range(1, 40);
             Debug.Log(chance);
             if (chance == 1)
             {
@@ -77,7 +77,7 @@ public class rots : MonoBehaviour
             {
                 if (_RandomOcto.noboss)
                 {
-                    Instantiate(bosspowerup);
+                    Instantiate(shield);
                 }
                 
             }
