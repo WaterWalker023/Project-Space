@@ -11,6 +11,7 @@ public class rots : MonoBehaviour
     public GameObject ink;
     public float speed = 2f;
     private walking _walking;
+    private CameraShake _CameraShake;
     private RandomOcto _RandomOcto;
     public float time;
     int delay = 2;
@@ -24,6 +25,7 @@ public class rots : MonoBehaviour
     {
         _walking = GameObject.Find("player").GetComponent<walking>();
         _RandomOcto = GameObject.Find("randomocto").GetComponent<RandomOcto>();
+        _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         float start = Random.Range(-5.0f, 5.0f);
         transform.position = new Vector3(14, start, -5);
 
@@ -38,6 +40,7 @@ public class rots : MonoBehaviour
         {
 
             _walking.hp = _walking.hp - 1;
+            _CameraShake.shaketimes = 0;
             Destroy(gameObject);
             
         }

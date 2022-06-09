@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class bosss : MonoBehaviour
 {
+    private Vector3 magnitude = new Vector3(0, 0.03f, 0);
+    public bool shake;
+    public int shaketimes;
+    int framedelay;
     float lasttime;
     float meteortime = 5;
     public GameObject bossink;
@@ -28,6 +32,30 @@ public class bosss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (shaketimes <= 4)
+        {
+            if (framedelay == 4)
+            {
+                framedelay = 0;
+                if (shake)
+                {
+                    gameObject.transform.position += magnitude;
+                    shake = false;
+                }
+                else
+                {
+                    gameObject.transform.position -= magnitude;
+                    shake = true;
+                    shaketimes++;
+                }
+
+            }
+            else
+            {
+                framedelay++;
+            }
+        }
+
         lasttime += Time.deltaTime;
         if (hp == 0)
         {
@@ -71,6 +99,7 @@ public class bosss : MonoBehaviour
             if (!inattack && hit)
             {
                 hp = hp - 1;
+                shaketimes = 0;
                 hit = false;
             }
             

@@ -10,6 +10,7 @@ public class walking : MonoBehaviour
     public int hp = 0;
     public GameObject bullet;
     public GameObject SAnicBoom;
+    private CameraShake _CameraShake;
 
     public float speedtime = 0;
     int speed = 0;
@@ -27,7 +28,7 @@ public class walking : MonoBehaviour
     
     void Start()
     {
-        
+        _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
 
@@ -93,7 +94,7 @@ public class walking : MonoBehaviour
             if (speedtime > 15)
             {
                 speedtime = 0;
-                moveSpeed = moveSpeed / 2;
+                moveSpeed = moveSpeed - 2.5f;
                 speed--;
             }
         }
@@ -124,6 +125,7 @@ public class walking : MonoBehaviour
         {
             if (!shield)
             {
+                _CameraShake.shaketimes = 0;
                 hp = hp - 1;
             }
             else
@@ -137,7 +139,7 @@ public class walking : MonoBehaviour
             speedtime = 0;
             if (speed == 0)
             {
-                moveSpeed = moveSpeed + moveSpeed;
+                moveSpeed = moveSpeed + 2.5f;
                 speed++;
                 
             }
@@ -164,6 +166,7 @@ public class walking : MonoBehaviour
         {
             if (!shield)
             {
+                _CameraShake.shaketimes = 0;
                 hp = hp - 2;
             }
             else
