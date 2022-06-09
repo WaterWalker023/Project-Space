@@ -60,7 +60,6 @@ public class rots : MonoBehaviour
         if (collision.collider.name == "bullet(Clone)" || collision.collider.name == "SAnicBoom(Clone)")
         {
             int chance = Random.Range(1, 40);
-            Debug.Log(chance);
             if (chance == 1)
             {
                 Instantiate(powerup);

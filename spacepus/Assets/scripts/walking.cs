@@ -160,5 +160,16 @@ public class walking : MonoBehaviour
         {
             shield = true;
         }
+        if (collision.collider.name == "meteor(Clone)")
+        {
+            if (!shield)
+            {
+                hp = hp - 2;
+            }
+            else
+            {
+                shield = false;
+            }
+        }
     }
 }

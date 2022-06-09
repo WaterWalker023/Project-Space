@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4970621212518809339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: -0.134, y: 0, z: 1}
   m_LocalScale: {x: 0.14285713, y: 0.14285713, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,4 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossink: {fileID: 238709853140946481, guid: d6f2d8d7b69052d40b52d60f259d551c, type: 3}
+  meteor: {fileID: 1623641190312841294, guid: ddaac3a322c9b5341bf3d6affaad259b, type: 3}
   hp: 5
+  nohit: {fileID: 21300000, guid: 614e91683a78a8f4fadb1d3835cc7fab, type: 3}
+  canhit: {fileID: 21300000, guid: ff15daecc597e4249bc20def1d7f1125, type: 3}
