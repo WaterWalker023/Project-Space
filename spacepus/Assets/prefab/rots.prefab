@@ -149,6 +149,8 @@ MonoBehaviour:
   time: 0
   type: 1
   schiet: 0
+  death: {fileID: 8300000, guid: e62cf8798162b6c4c80c9fb97853ff1c, type: 3}
+  wallhit: {fileID: 8300000, guid: 3bf05ca7a70e9c94c80a926c5b433c90, type: 3}
 --- !u!54 &8814067825612855935
 Rigidbody:
   m_ObjectHideFlags: 0

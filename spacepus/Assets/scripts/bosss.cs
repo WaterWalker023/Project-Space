@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class bosss : MonoBehaviour
 {
+    public AudioClip hitsound;
     private Vector3 magnitude = new Vector3(0, 0.03f, 0);
     public bool shake;
     public int shaketimes;
@@ -14,6 +16,7 @@ public class bosss : MonoBehaviour
     float meteortime = 5;
     public GameObject bossink;
     public GameObject meteor;
+    public GameObject bossbar;
     float Posx;
     float Posy;
     int attacktype;
@@ -27,6 +30,7 @@ public class bosss : MonoBehaviour
     void Start()
     {
         lasttime = 0;
+        Instantiate(bossbar, GameObject.Find("Canvas").transform);
     }
 
     // Update is called once per frame
@@ -47,6 +51,7 @@ public class bosss : MonoBehaviour
                     gameObject.transform.position -= magnitude;
                     shake = true;
                     shaketimes++;
+
                 }
 
             }
@@ -98,6 +103,7 @@ public class bosss : MonoBehaviour
         {
             if (!inattack && hit)
             {
+                AudioSource.PlayClipAtPoint(hitsound, new Vector3(0, 0, -10));
                 hp = hp - 1;
                 shaketimes = 0;
                 hit = false;

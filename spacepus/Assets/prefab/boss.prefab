@@ -195,10 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1342cfb8d402d3b49bdef88969f8401f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitsound: {fileID: 8300000, guid: 3c83fbff069fa1847b0f395d4324e16d, type: 3}
   shake: 0
   shaketimes: 5
   bossink: {fileID: 238709853140946481, guid: d6f2d8d7b69052d40b52d60f259d551c, type: 3}
   meteor: {fileID: 1623641190312841294, guid: ddaac3a322c9b5341bf3d6affaad259b, type: 3}
+  bossbar: {fileID: 5984746510998304640, guid: d0505dda6a376824385ae389a851450c, type: 3}
   hp: 5
   nohit: {fileID: 21300000, guid: 614e91683a78a8f4fadb1d3835cc7fab, type: 3}
   canhit: {fileID: 21300000, guid: ff15daecc597e4249bc20def1d7f1125, type: 3}

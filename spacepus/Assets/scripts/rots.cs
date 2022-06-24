@@ -19,6 +19,8 @@ public class rots : MonoBehaviour
     float Posx;
     float Posy;
     public bool schiet;
+    public AudioClip death;
+    public AudioClip wallhit;
     // Start is called before the first frame update
     // 
     void Start()
@@ -28,8 +30,6 @@ public class rots : MonoBehaviour
         _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         float start = Random.Range(-5.0f, 5.0f);
         transform.position = new Vector3(14, start, -5);
-
-
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class rots : MonoBehaviour
         transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         if (transform.position.x < -15)
         {
-
+            AudioSource.PlayClipAtPoint(wallhit, new Vector3(0, 0, -10));
             _walking.hp = _walking.hp - 1;
             _CameraShake.shaketimes = 0;
             Destroy(gameObject);
@@ -51,7 +51,6 @@ public class rots : MonoBehaviour
             {
                 Posx = transform.position.x;
                 Posy = transform.position.y;
-                //Instantiate(ink);
                 time = 0;
                 Instantiate(ink, new Vector3(Posx, Posy, -5), Quaternion.identity);
             }
@@ -75,7 +74,7 @@ public class rots : MonoBehaviour
             {
                 Instantiate(Health);
             }
-            if (chance == 4)
+            if (chance >= 4 && chance <= 8)
             {
                 if (_RandomOcto.noboss)
                 {
@@ -83,6 +82,7 @@ public class rots : MonoBehaviour
                 }
                 
             }
+            AudioSource.PlayClipAtPoint(death, new Vector3(0, 0, -10));
             Destroy(gameObject);
         }
         if (collision.collider.name == "player")

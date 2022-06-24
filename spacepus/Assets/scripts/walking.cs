@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class walking : MonoBehaviour
 {
+    AudioSource audio;
     public bool shield;
     public int en = 0;
     public int hp = 0;
@@ -17,18 +18,20 @@ public class walking : MonoBehaviour
     int maxen = 100;
     float enpersec = 1f;
     float encound = 0;
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
     int wallleft = 9;
     int wallright = -9;
     int wallup = 5;
     int walldown = -5;
     bool slowdown = false;
+    public int gothit = 5;
 
     
     
-    void Start()
+    void Awake()
     {
         _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        audio = this.GetComponent<AudioSource>();
     }
 
 
@@ -41,9 +44,8 @@ public class walking : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.A) && (transform.position.x > wallright))
-        {
             transform.position += Vector3.right * -moveSpeed * Time.deltaTime;
-        }
+        
 
 
         if (Input.GetKey(KeyCode.W) && (transform.position.y < wallup))
@@ -125,7 +127,9 @@ public class walking : MonoBehaviour
         {
             if (!shield)
             {
+                gothit = 0;
                 _CameraShake.shaketimes = 0;
+                audio.PlayOneShot(audio.clip, 1f);
                 hp = hp - 1;
             }
             else
@@ -166,6 +170,8 @@ public class walking : MonoBehaviour
         {
             if (!shield)
             {
+                gothit = 0;
+                audio.PlayOneShot(audio.clip, 1f);
                 _CameraShake.shaketimes = 0;
                 hp = hp - 2;
             }
