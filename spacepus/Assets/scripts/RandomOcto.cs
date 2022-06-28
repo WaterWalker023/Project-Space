@@ -71,6 +71,10 @@ public class RandomOcto : MonoBehaviour
             Instantiate(boss);
             noboss = true;
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            gametime = 90;
+        }
 
     }
 }

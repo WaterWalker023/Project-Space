@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class walking : MonoBehaviour
 {
-
-    public float en = 0;
+    public bool shield;
+    public int en = 0;
     public int hp = 0;
     public GameObject bullet;
     public GameObject SAnicBoom;
+    private CameraShake _CameraShake;
 
     public float speedtime = 0;
     int speed = 0;
@@ -27,7 +28,7 @@ public class walking : MonoBehaviour
     
     void Start()
     {
-        
+        _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
 
@@ -81,7 +82,7 @@ public class walking : MonoBehaviour
         }
 
 
-        if (hp == 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);            
             SceneManager.LoadScene("Death");
@@ -93,7 +94,7 @@ public class walking : MonoBehaviour
             if (speedtime > 15)
             {
                 speedtime = 0;
-                moveSpeed = moveSpeed / 2;
+                moveSpeed = moveSpeed - 2.5f;
                 speed--;
             }
         }
@@ -122,14 +123,23 @@ public class walking : MonoBehaviour
     {
         if (collision.collider.name == "rots(Clone)" || collision.collider.name == "snelrots(Clone)" || collision.collider.name == "schietrots(Clone)" || collision.collider.name == "ink(Clone)" || collision.collider.name == "bossink(Clone)")
         {
-            hp = hp - 1;
+            if (!shield)
+            {
+                _CameraShake.shaketimes = 0;
+                hp = hp - 1;
+            }
+            else
+            {
+                shield = false;
+            }
+            
         }
         if (collision.collider.name == "speedup(Clone)")
         {
             speedtime = 0;
             if (speed == 0)
             {
-                moveSpeed = moveSpeed + moveSpeed;
+                moveSpeed = moveSpeed + 2.5f;
                 speed++;
                 
             }
@@ -147,6 +157,22 @@ public class walking : MonoBehaviour
                 hp = hp + 1;
             }
             
+        }
+        if (collision.collider.name == "shield(Clone)")
+        {
+            shield = true;
+        }
+        if (collision.collider.name == "meteor(Clone)")
+        {
+            if (!shield)
+            {
+                _CameraShake.shaketimes = 0;
+                hp = hp - 2;
+            }
+            else
+            {
+                shield = false;
+            }
         }
     }
 }

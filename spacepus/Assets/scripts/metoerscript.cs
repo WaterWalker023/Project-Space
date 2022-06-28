@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossink : MonoBehaviour
+public class metoerscript : MonoBehaviour
 {
 
     private Vector3 directie;
@@ -20,7 +20,7 @@ public class bossink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3 (transform.position.x, transform.position.y, -5);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -5);
         transform.position += directie * speed;
     }
     void OnCollisionEnter(Collision collision)

@@ -7,9 +7,12 @@ public class rots : MonoBehaviour
     public GameObject Health;
     public GameObject energy;
     public GameObject powerup;
+    public GameObject shield;
     public GameObject ink;
     public float speed = 2f;
     private walking _walking;
+    private CameraShake _CameraShake;
+    private RandomOcto _RandomOcto;
     public float time;
     int delay = 2;
     public int type;
@@ -21,6 +24,8 @@ public class rots : MonoBehaviour
     void Start()
     {
         _walking = GameObject.Find("player").GetComponent<walking>();
+        _RandomOcto = GameObject.Find("randomocto").GetComponent<RandomOcto>();
+        _CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         float start = Random.Range(-5.0f, 5.0f);
         transform.position = new Vector3(14, start, -5);
 
@@ -35,6 +40,7 @@ public class rots : MonoBehaviour
         {
 
             _walking.hp = _walking.hp - 1;
+            _CameraShake.shaketimes = 0;
             Destroy(gameObject);
             
         }
@@ -68,6 +74,14 @@ public class rots : MonoBehaviour
             if (chance == 3)
             {
                 Instantiate(Health);
+            }
+            if (chance == 4)
+            {
+                if (_RandomOcto.noboss)
+                {
+                    Instantiate(shield);
+                }
+                
             }
             Destroy(gameObject);
         }
