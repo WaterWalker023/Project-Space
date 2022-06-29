@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class rots : MonoBehaviour
 {
+    public GameObject deathpartical;
     public GameObject Health;
     public GameObject energy;
     public GameObject powerup;
@@ -61,6 +62,8 @@ public class rots : MonoBehaviour
     {
         if (collision.collider.name == "bullet(Clone)" || collision.collider.name == "SAnicBoom(Clone)")
         {
+            Posx = transform.position.x;
+            Posy = transform.position.y;
             int chance = Random.Range(1, 40);
             if (chance == 1)
             {
@@ -83,6 +86,7 @@ public class rots : MonoBehaviour
                 
             }
             AudioSource.PlayClipAtPoint(death, new Vector3(0, 0, -10));
+            Instantiate(deathpartical, new Vector3(Posx, Posy, -5), Quaternion.identity);
             Destroy(gameObject);
         }
         if (collision.collider.name == "player")
