@@ -29,5 +29,9 @@ public class Navigatie : MonoBehaviour
     {
         Debug.Log("press options");
     }
-    
+    public void GoToOpening()
+    {
+        SceneManager.LoadScene("opening");
+    }
+
 }

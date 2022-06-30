@@ -17,15 +17,18 @@ public class bosss : MonoBehaviour
     public GameObject bossink;
     public GameObject meteor;
     public GameObject bossbar;
+    public GameObject bossdeath;
     float Posx;
     float Posy;
-    int attacktype;
     public int hp;
     bool inattack;
     int meteorchance;
     public Sprite nohit;
     public Sprite canhit;
     public bool hit;
+    private RandomOcto _RandomOcto;
+    public AudioClip deathsound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,22 +65,21 @@ public class bosss : MonoBehaviour
         }
 
         lasttime += Time.deltaTime;
-        if (hp == 0)
-        {
-            SceneManager.LoadScene("end");
-        }
+
+
+
+
         Posx = transform.position.x;
         Posy = transform.position.y;
-        if (lasttime > 2)
+        if (lasttime > 2 && hp != 0)
         {
             Instantiate(bossink, new Vector3(Posx, Posy, -5), Quaternion.identity);
             lasttime = 0;
         }
         meteortime += Time.deltaTime;
-        if (meteortime > 10)
+        if (meteortime > 10 && hp != 0)
         {
             meteorchance = Random.Range(2, 4);
-            Debug.Log(meteorchance);
             if (meteorchance == 2)
             {
                 Instantiate(meteor, new Vector3(Posx, -6, -5), Quaternion.identity);
@@ -107,6 +109,13 @@ public class bosss : MonoBehaviour
                 hp = hp - 1;
                 shaketimes = 0;
                 hit = false;
+                if (hp == 0)
+                {
+                    AudioSource.PlayClipAtPoint(deathsound, new Vector3(0, 0, -10));
+                    Instantiate(bossdeath, new Vector3(Posx-1, Posy, -5), Quaternion.identity);
+                    Destroy(gameObject);
+
+                }
             }
             
         }

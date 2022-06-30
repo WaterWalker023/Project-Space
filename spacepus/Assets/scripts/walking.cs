@@ -75,6 +75,10 @@ public class walking : MonoBehaviour
                 en++;
             }
         }
+        if (en > 100)
+        {
+            en = 100;
+        }
 
 
         if (Input.GetKeyDown(KeyCode.E) && en >= 15)

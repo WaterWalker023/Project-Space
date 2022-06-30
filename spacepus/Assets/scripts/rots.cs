@@ -56,7 +56,16 @@ public class rots : MonoBehaviour
                 Instantiate(ink, new Vector3(Posx, Posy, -5), Quaternion.identity);
             }
         }
-        
+        if (!_RandomOcto.enemy)
+        {
+
+            Posx = transform.position.x;
+            Posy = transform.position.y;
+            AudioSource.PlayClipAtPoint(death, new Vector3(0, 0, -10));
+            Instantiate(deathpartical, new Vector3(Posx, Posy, -5), Quaternion.identity);
+            Destroy(gameObject);
+        }
+
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -89,6 +98,7 @@ public class rots : MonoBehaviour
             Instantiate(deathpartical, new Vector3(Posx, Posy, -5), Quaternion.identity);
             Destroy(gameObject);
         }
+
         if (collision.collider.name == "player")
         {
             Destroy(gameObject);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomOcto : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class RandomOcto : MonoBehaviour
     public GameObject snelrots;
     public GameObject schietrots;
     public GameObject boss;
+    private bosss _boss;
 
     public float gametime;
+    int niks = 0;
 
     float rotstimer;
     float rotsdelay;
@@ -20,7 +23,11 @@ public class RandomOcto : MonoBehaviour
     float schietrotstimer;
     float schietrotsdelay;
 
+    public float bossdeathtimer;
+
     public bool noboss = false;
+    public bool enemy = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,13 +75,32 @@ public class RandomOcto : MonoBehaviour
 
         if (gametime > 90 && !noboss)
         {
-            Instantiate(boss);
+            GameObject goBoss = Instantiate(boss);
+            _boss = goBoss.GetComponent<bosss>();
             noboss = true;
+
         }
+
+        if (bossdeathtimer > 1.5f)
+        {
+            SceneManager.LoadScene("end");
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             gametime = 90;
         }
+        if (noboss)
+        {
+            if (_boss.hp == 0)
+            {
+                bossdeathtimer = bossdeathtimer + Time.deltaTime;
+                enemy = false;
+
+            }
+        }
 
     }
 }
+//bossdeathtimer = bossdeathtimer + Time.deltaTime;
+//Debug.Log(bossdeathtimer);

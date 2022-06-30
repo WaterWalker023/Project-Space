@@ -687,7 +687,9 @@ MonoBehaviour:
   schietrots: {fileID: 8814067825612855921, guid: 4eb932098ac800e4cb666796d51bc7f4, type: 3}
   boss: {fileID: 5508471802217357888, guid: 2ee8d88a9c7d2094e94c0e6b95f60f09, type: 3}
   gametime: 0
+  bossdeathtimer: 0
   noboss: 0
+  enemy: 1
 --- !u!65 &741883128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -874,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c586eb24e0a654c805216c5791bc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
+  cursorTexture: {fileID: 2800000, guid: 532d09b3be38b8f4b91a63d4810fc585, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!1 &784635450
@@ -1732,7 +1734,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

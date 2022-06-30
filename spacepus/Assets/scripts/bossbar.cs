@@ -65,5 +65,9 @@ public class bossbar : MonoBehaviour
         {
             gameObject.GetComponent<Image>().sprite = bossbar5s;
         }
+        if (_bosss.hp == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
